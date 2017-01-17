@@ -1,4 +1,4 @@
-# storeinfoinmongo
+# Store Information in MongoDb
 
 The goal of this Spring rest project is to store multi form data (form and binary data in mongo database). It is a spring powered application which stores data in mongo database.
 POJO mapping to support BSON which can easily sotred in Mongodb.
