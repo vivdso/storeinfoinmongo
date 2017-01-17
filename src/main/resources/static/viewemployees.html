@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Employee info</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<br/>
+<a href="saveemployee.html">Add New</a>
+
+<div id="listEmployees">
+
+</div>
+
+</body>
+<script language="javascript">
+    function hexToBase64(str) {
+        return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
+    }
+
+    $(document).ready(function(){
+        $.get("v1/employee", function(data, status){
+            var tableStart="<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Image</th></tr>";
+            var tableData=""
+            var tableEnd="</table>";
+            for (var i=0;i<data.length;i++){
+                tableData=tableData+"<tr><td>" + data[i].firstName + "</td><td>"+ data[i].lastName +"</td><td> " +
+                        "<img src='data:image/jpeg;base64, " + data[i].employeePicture.data   + "' /> </td></tr>"
+                //hexToBase64(data[i].employeePicture.data)
+
+            }
+            $('#listEmployees').append(tableStart + tableData + tableEnd);
+
+        });
+    });
+</script>
+</html>

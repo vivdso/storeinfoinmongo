@@ -1,23 +1,16 @@
-# storeinfoinmongo
-The goal of this Spring rest project is to store multi form data (form and binary data in mongo database). It is a spring powered application which stores data in mongo database.
-POJO mapping to support BSON which can easily sotred in Mongodb.
-CRUD operations using POJO.
-Auto wiring of MongoDB
+package com.example.domain;
 
-Create an Employee Repository with Employee First Name, Last Name and Employee Image.
+import org.bson.types.Binary;
+import org.bson.types.ObjectId;
+import  org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-For CRUD operations simple interface to connect 
-import com.example.domain.Employee;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * Created by vivek on 1/15/2017.
  */
-public interface EmployeeDbRepository extends MongoRepository<Employee,String> {
-}
-
-
-Pojo Employee Object
 @Document(collection="Employee")
 public class Employee {
 
@@ -57,16 +50,3 @@ public class Employee {
         return employeePicture;
     }
 }
-
-application.properties
-spring.data.mongodb.host=localhost
-spring.data.mongodb.port=27017
-spring.data.mongodb.database=PersonalInfo
-spring.http.multipart.max-file-size=2048KB
-spring.http.multipart.max-request-size=2049KB
-
-
-
-
-
-

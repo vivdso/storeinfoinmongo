@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Save Employee info</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script language="javascript">
+
+        $(document).ready(function() {
+            $('#saveInfo').click(function () {
+                // $('#employeeInfo').submit();
+                var formData = new FormData($('#employeeInfo')[0]);
+
+                $.ajax({
+                    url: '/v1/employee',
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (returndata) {
+                        //API does not return anything can..
+                        if (true)
+                        {window.location.href='../viewemployees.html';}
+                    }
+                });
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<div>
+    <form id="employeeInfo" method="post" enctype="multipart/form-data" >
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="firstName"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lastName"></td>
+            </tr>
+            <tr>
+                <td>Picture (only jpg):</td>
+                <td><input type="file" name="employeePic"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="saveInfo"  value="Save" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
