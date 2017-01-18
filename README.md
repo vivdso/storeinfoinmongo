@@ -18,6 +18,12 @@ Run:
 4)java -jar target\employeinfo-0.0.1-SNAPSHOT.jar
 5)Open a browser and type http://localhost:8080/saveemployee.html  ( Enter First name, Last Name and a Jpeg image and click save)
 
+*** Personal Info with uplaod a jpeg image
+![page1](https://cloud.githubusercontent.com/assets/14111135/22045395/a1d20cee-dcdf-11e6-9ae4-5118ba00c22e.PNG)
+
+*** List all the documents stored in MongoDB
+![page2](https://cloud.githubusercontent.com/assets/14111135/22045438/d82033fc-dcdf-11e6-9eac-7f0db3039301.PNG)
+
 Create an Employee Repository with Employee First Name, Last Name and Employee Image.
 
 For CRUD operations simple interface to connect 
