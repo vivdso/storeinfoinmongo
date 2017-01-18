@@ -25,7 +25,6 @@ Create an Employee Repository with Employee First Name, Last Name and Employee I
 *** List all the documents stored in MongoDB
 ![page2](https://cloud.githubusercontent.com/assets/14111135/22045438/d82033fc-dcdf-11e6-9eac-7f0db3039301.PNG)
 
-
 For CRUD operations simple interface to connect to mongoDB
 ```
 import com.example.domain.Employee;
