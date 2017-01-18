@@ -1,4 +1,4 @@
-# Store Information in MongoDb
+# Store binary Information in MongoDb withou GridFS
 
 The goal of this Spring rest project is to store binary data along with other form fields (multi form data) in MongoDB and displays the stored information.
 Technology stack, Java, Springboot, MongoDB
