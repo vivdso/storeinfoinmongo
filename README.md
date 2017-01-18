@@ -1,37 +1,43 @@
 # Store Information in MongoDb
 
-The goal of this Spring rest project is to store multi form data (form and binary data in mongo database). It is a spring powered application which stores data in mongo database.
-POJO mapping to support BSON which can easily sotred in Mongodb.
-CRUD operations using POJO.
-Auto wiring of MongoDB
+The goal of this Spring rest project is to store binary data along with other form fields (multi form data) in MongoDB and displays the stored information.
+Technology stack, Java, Springboot, MongoDB
+
 
 Prerequisites:
-1)MongoDB on local machine
-2)Java 1.7 or higher
-3)Maven
+1. MongoDB on local machine
+2. Java 1.7 or higher
+3. Maven
 
 
 Run:
-1) Clone the application
-2) Navigate to the cloned folder
-3) mvn clean package
-4)java -jar target\employeinfo-0.0.1-SNAPSHOT.jar
-5)Open a browser and type http://localhost:8080/saveemployee.html  ( Enter First name, Last Name and a Jpeg image and click save)
+1. Clone the application
+2. Navigate to the cloned folder
+3. mvn clean package
+4. java -jar target\employeinfo-0.0.1-SNAPSHOT.jar
+5. Open a browser and type http://localhost:8080/index.html
+( Enter First name, Last Name and a Jpeg image and click save)
 
-Create an Employee Repository with Employee First Name, Last Name and Employee Image.
+Create an Employee Repository with Employee First Name, Last Name and Employee Image. viewemployees.html  will display all Employee collection stored in MongoDB.
+*** Personal Info with uplaod a jpeg image
+![page1](https://cloud.githubusercontent.com/assets/14111135/22045395/a1d20cee-dcdf-11e6-9ae4-5118ba00c22e.PNG)
 
-For CRUD operations simple interface to connect 
+*** List all the documents stored in MongoDB
+![page2](https://cloud.githubusercontent.com/assets/14111135/22045438/d82033fc-dcdf-11e6-9eac-7f0db3039301.PNG)
+
+
+For CRUD operations simple interface to connect to mongoDB
+```
 import com.example.domain.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-/**
- * Created by vivek on 1/15/2017.
- */
 public interface EmployeeDbRepository extends MongoRepository<Employee,String> {
 }
 
+```
 
-Pojo Employee Object
+POJO Employee Object
+```
 @Document(collection="Employee")
 public class Employee {
 
@@ -71,14 +77,16 @@ public class Employee {
         return employeePicture;
     }
 }
+```
 
-application.properties
+*** application.properties
+```
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=PersonalInfo
 spring.http.multipart.max-file-size=2048KB
 spring.http.multipart.max-request-size=2049KB
-
+```
 
 
 
