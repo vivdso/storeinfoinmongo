@@ -4,13 +4,13 @@ The goal of this Spring rest project is to store binary data along with other fo
 Technology stack, Java, Springboot, MongoDB
 
 
-Prerequisites:
+##Prerequisites:
 1. MongoDB on local machine
 2. Java 1.7 or higher
 3. Maven
 
 
-Run:
+##Run:
 1. Clone the application
 2. Navigate to the cloned folder
 3. mvn clean package
